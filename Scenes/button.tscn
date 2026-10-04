@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b8xefydgswl5r"]
+
+[ext_resource type="Script" uid="uid://bih75n4s5j1h" path="res://Scripts/button.gd" id="1_1cmwl"]
+
+[node name="Button" type="Button" unique_id=112550716]
+offset_left = 440.0
+offset_top = 230.0
+offset_right = 545.0
+offset_bottom = 279.0
+text = "Retry"
+script = ExtResource("1_1cmwl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://rmmo73dbwx4m"]
+
+[ext_resource type="Script" uid="uid://lf82d1gjcjug" path="res://Scenes/chest.gd" id="1_bagqn"]
+[ext_resource type="Texture2D" uid="uid://cd5ad8opaqp0h" path="res://Assets/Free Platform Game Assets/Chests/New Chests ( Update 1.8.5 )/png/Sheets/Chest Sheet-2048x512(1x).png" id="1_cjfl1"]
+[ext_resource type="AudioStream" uid="uid://bdmuvfl0ugio1" path="res://Zelda_-_All_Item_Get_Jingles_1986_-_2017.wav" id="3_pmguq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmguq"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(33, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq33m"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(254, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6qf6"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(475, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25pds"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(696, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uovm1"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(917, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrmno"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(1138, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k15qg"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(1359, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1puaa"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(1580, 0, 221, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed36l"]
+atlas = ExtResource("1_cjfl1")
+region = Rect2(1801, 0, 221, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qr1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmguq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq33m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6qf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25pds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uovm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrmno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k15qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1puaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed36l")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmse6"]
+size = Vector2(37, 35)
+
+[node name="Area2D" type="Area2D" unique_id=1513608734]
+script = ExtResource("1_bagqn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1195127947]
+position = Vector2(-25, -30.5)
+scale = Vector2(0.22624435, 0.23828125)
+sprite_frames = SubResource("SpriteFrames_8qr1j")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073539039]
+position = Vector2(-24.5, -25.5)
+shape = SubResource("RectangleShape2D_cmse6")
+
+[node name="ZeldaAllItemGetJingles19862017" type="AudioStreamPlayer" parent="." unique_id=2106041913]
+stream = ExtResource("3_pmguq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1343944702]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

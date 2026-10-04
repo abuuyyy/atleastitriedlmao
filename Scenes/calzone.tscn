@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cvj5tlh52nrxt"]
+
+[ext_resource type="Script" uid="uid://c5ou56vrb0ju1" path="res://Scripts/calzone.gd" id="1_sypq3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k6ga1"]
+
+[node name="Area2D" type="Area2D" unique_id=458133291]
+script = ExtResource("1_sypq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085773321]
+shape = SubResource("WorldBoundaryShape2D_k6ga1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwa3iu23cwyuw"
+path="res://.godot/imported/overworld theme.wav-495856e7ba799790f61a8eb65f30d15d.sample"
+
+[deps]
+
+source_file="res://overworld theme.wav"
+dest_files=["res://.godot/imported/overworld theme.wav-495856e7ba799790f61a8eb65f30d15d.sample"]
+
+[params]
+
+force/8_bit=true
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
